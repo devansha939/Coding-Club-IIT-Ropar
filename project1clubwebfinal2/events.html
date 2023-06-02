@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+    <style>
+        @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #animation-container {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            background-image: url('background.jpg');
+            background-size: 100% auto;
+            /* Updated */
+            background-repeat: no-repeat;
+            animation: move-background 50s linear infinite;
+        }
+
+        @keyframes move-background {
+            0% {
+                background-position: bottom;
+            }
+
+            100% {
+                background-position: top;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #animation-container {
+                background-size: auto 150%;
+                animation-duration: 25s;
+                /* Updated */
+            }
+        }
+
+        .content-wrapper {
+            margin-top: 70px;
+            border: none;
+            /* Adjust this value based on the height of your navbar */
+        }
+
+
+        .nav-item .active {
+            background-color: rgba(0, 123, 255, 0.5);
+            color: #fff;
+        }
+
+        .nav-item .nav-link:hover {
+            background-color: rgba(0, 123, 255, 0.5);
+            color: #fff;
+        }
+
+        .bi {
+            vertical-align: -0.125em;
+            fill: currentColor;
+        }
+
+        .me-2 {
+            margin-right: 0.5rem !important;
+        }
+
+        .pt-5 {
+            padding-top: 0rem !important;
+        }
+
+        .my-5 {
+            margin-top: 0rem !important;
+            margin-bottom: 3rem !important;
+        }
+
+        .btn-group {
+            padding-bottom: 1.5rem !important;
+        }
+
+        .col-lg-4 {
+            position: relative;
+            transform: scale(1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .col-lg-4:hover {
+            transform: scale(1.1);
+        }
+
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .col-lg-4 svg {
+            opacity: 0;
+        }
+
+        .col-lg-4:hover svg {
+            opacity: 1;
+        }
+
+        .bg-dark {
+            --bs-bg-opacity: 0;
+        }
+
+        .me-2 {
+            margin-left: 1rem !important;
+            margin-right: 1rem !important;
+        }
+
+        .fot {
+            font-weight: bold;
+            position: relative;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            color: #6c757d;
+            border-color: transparent;
+            opacity: 1;
+            z-index: 1000;
+        }
+
+        .navbar-nav .nav-link {
+            border-radius: 10px;
+        }
+
+        .wc {
+            color: #fff;
+        }
+
+        .sticky-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        * {
+            border: none;
+        }
+
+        .navbar-wrapper {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="animation-container"></div>
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-navbar"
+            style="opacity:1; background-color: transparent; color: white;">
+            <a class="navbar-brand" href="home.html"><img src="Coding Club Logo Dark.png" alt="Coding Club Logo.png"
+                    width="40px" height="40px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a href="home.html" class="nav-link wc" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="events.html" class="nav-link active wc" aria-current="page">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="ourteam.html" class="nav-link  wc" aria-current="page">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="member.html" class="nav-link wc" aria-current="page">Member</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+
+    <div class="content-wrapper">
+        <div class="card mb-3 bg-transparent" style="max-width: 99%; border: none;">
+            <div class="row no-gutters" style="padding: top 60px ;">
+                <div class="col-md-4">
+                    <div id="ISMP Session" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="ISMP 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="ISMP 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="ISMP 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#ISMP Session" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="ISMP Session" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">ISMP Session</h5>
+                        <p class="card-text">We conducted an exciting ISMP orientation session at Coding Club, where we
+                            introduced participants to the world of coding and showcased the opportunities our club
+                            offers.
+                            The session covered the club's goals, activities, and resources available for members. Join
+                            us
+                            and embark on a coding journey filled with learning, collaboration, and innovation. Stay
+                            connected for future events and updates!</p>
+                        <p class="card-text"><small class="text-muted">Date : 01/11/2022</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%; border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">Introductory Session</h5>
+                        <p class="card-text">We conducted an engaging introductory session for Coding Club, where
+                            we welcomed aspiring coders and guided them on their coding journey. The session covered the
+                            club's objectives, the importance of coding skills, and the exciting opportunities available
+                            to
+                            our members. Participants had the chance to learn about various programming
+                            languages, explore real-world applications of coding, and understand the benefits of being
+                            part
+                            of our supportive
+                            community.
+
+                            During the session, we provided valuable resources, including coding tutorials, and
+                            recommended
+                            learning platforms, to help our members enhance their skills. We also emphasized the
+                            importance
+                            of collaboration, problem-solving, and continuous learning in the coding field.Together,
+                            let's
+                            unlock the potential of coding and shape a brighter future through innovation and
+                            creativity!
+                        </p>
+                        <p class="card-text"><small class="text-muted">Date : 16/11/2022</small></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="Introductory Session" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="Intro Session 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="Intro Session 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="Intro Session 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#Introductory Session" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#Introductory Session" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div id="Senior session" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="DSA 1.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="DSA 2.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="DSA 3.JPG" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#Senior session" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#Senior session" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">Placement and Intership Guidance Session</h5>
+                        <p class="card-text">Recently we concluded a highly informative session on placement and
+                            internship
+                            guidance
+                            at Coding Club. The session aimed to provide valuable insights and resources to help
+                            students
+                            navigate the competitive
+                            landscape of coding placements and internships. Our experienced mentors shared tips,
+                            interview
+                            strategies, and
+                            recommended learning paths to enhance students' chances of success. During the session,
+                            participants had the opportunity to clarify their doubts, gain valuable advice, and learn
+                            about
+                            the wide range of internship and placement opportunities available through Coding Club.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Date : 01/12/2023</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">Introduction to Basic competitive Programming</h5>
+                        <p class="card-text">We successful conducted session on Basic Competitive Programming at Coding
+                            Club. This interactive session provided participants with a solid foundation in competitive
+                            programming and served as a
+                            platform to address their doubts and queries.
+
+                            During the session, our experienced coordinators shared valuable insights, tips, and
+                            techniques
+                            to improve problem-solving
+                            abilities and algorithmic thinking. Participants actively engaged in coding exercises,
+                            gained
+                            hands-on experience, and
+                            received personalized guidance to enhance their competitive programming skills.
+
+                            We are committed to supporting our members on their coding journey, and this session was
+                            just
+                            the beginning.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Date : 14/12/2022</small></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="CP" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="CP 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CP 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CP 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#CP" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#CP" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div id="Filtering Contest" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="Aptitude Test 1.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="Aptitude Test 2.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="Aptitude Test 3.JPG" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#Filtering Contest" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#Filtering Contest" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">Filtering Test</h5>
+                        <p class="card-text">We conducted a rigorous filtering test focused on assessing aptitude for
+                            the
+                            Coding Club membership. Aptitude is an integral part of competitive programming, and this
+                            test
+                            aimed to identify individuals with a strong foundation and potential in coding. Participants
+                            were challenged with a series of thought-provoking problems that tested their
+                            problem-solving skills, logical reasoning, and algorithmic thinking. By organizing this
+                            test, we
+                            aimed to ensure that our Coding Club remains a vibrant community of passionate and skilled
+                            coders</p>
+                        <p class="card-text"><small class="text-muted">Date : 10/01/2023</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">Accepted or Rejected Contest</h5>
+                        <p class="card-text">We successfully completed our highly anticipated Team-based Competitive
+                            Programming
+                            Contest "Accepted or Rejected" at Coding Club. The contest was organized in a team of two.
+                            The
+                            contest brought together coding enthusiasts in teams of two to demonstrate their
+                            problem-solving abilities, teamwork, and competitive spirit.
+
+                            Participants battled it out through a series of challenging coding problems, testing their
+                            algorithmic thinking,
+                            efficiency, and creativity. The atmosphere was filled with excitement and camaraderie as
+                            teams
+                            collaborated,
+                            brainstormed solutions, and pushed their coding skills to the limit.
+
+                            We extend our heartfelt congratulations to all the participants for their remarkable
+                            performance
+                            and dedication. Your
+                            passion for coding truly shone through! We would also like to express our gratitude to the
+                            organizing team for their
+                            efforts in making this contest a resounding success.
+                        </p>
+                        <a href="https://codeforces.com/contestInvitation/1d6b445612ac63b4865312fafef806b5ccb03612"
+                            class="btn btn-outline-dark wc">Contest Link</a>
+                        <p class="card-text"><small class="text-muted">Date : 12/02/2023</small></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="AR" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="AR 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="AR 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="AR 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#AR" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#AR" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <div id="CODCOM" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="CODCOM 1.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CODCOM 2.JPG" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CODCOM 3.JPG" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#CODCOM" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#CODCOM" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">CODCOM</h5>
+                        <p class="card-text">CODCOM, Coding Club's highly anticipated Three-Stage Tournament, hosted as
+                            part
+                            of our annual techno-cultural fest, ZEITGEIST. This exciting tournament is a team event that
+                            challenges participants to
+                            solve problem statements in each stage and submit their codes for AC.
+
+                            The tournament attracted an overwhelming response, with over 600 teams registering for Stage
+                            1.
+                            The level of enthusiasm
+                            and participation is a testament to the coding talent and competitive spirit within our
+                            community.
+
+                            Participants will embark on a thrilling coding journey, tackling increasingly complex
+                            problem
+                            statements and showcasing
+                            their problem-solving skills, algorithmic thinking, and teamwork. The top-performing teams
+                            from
+                            each stage will advance
+                            to the next level, bringing them closer to the ultimate glory.
+
+                            We extend our gratitude to all the participants for their enthusiasm and commitment, as well
+                            as
+                            to the organizing team
+                            for their efforts in making this tournament a grand success.</p>
+                        <a href="https://www.codechef.com/CODO2023" class="btn btn-outline-dark wc">Contest Link</a>
+                        <p class="card-text"><small class="text-muted">Date : 26/03/2023</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">CODEHUNT</h5>
+                        <p class="card-text">We are thrilled to announce the successful organization of CODEHUNT, a
+                            thrilling event held under the grand umbrella of
+                            ZEITGEIST, our annual techno-cultural fest. This unique competition combined coding
+                            challenges
+                            and aptitude questions to
+                            test the multidimensional skills of participants.
+
+                            In CODEHUNT, each team was presented with a coding problem to solve. Their task was to write
+                            a
+                            program that effectively
+                            solved the given problem. Once the coding part was completed, the teams ventured into the
+                            realm
+                            of aptitude, where they
+                            put their logical and analytical thinking to the test.
+
+                            We are proud to share that the event witnessed an overwhelming response, with more than 70
+                            teams
+                            registering for the
+                            offline mode of participation. The enthusiasm and commitment displayed by the participants
+                            were
+                            truly commendable.
+
+                            The cycle of challenges and problem-solving continued as teams tackled coding problems and
+                            aptitude questions, pushing
+                            their limits and showcasing their coding prowess and aptitude prowess.
+                        </p>
+                        <p class="card-text"><small class="text-muted">Date : 26/03/2023</small></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="CODEHUNT" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-interval="3000">
+                                <img src="CH 1.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CH 2.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item" data-interval="3000">
+                                <img src="CH 3.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#CODEHUNT" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#CODEHUNT" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3 bg-transparent" style="max-width: 99%;border: none;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="AU 3.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body wc">
+                        <h5 class="card-title">ALGO UNLOCK</h5>
+                        <p class="card-text">We successfully organized highly engaging
+                            two-staged ALGO UNLOCK Contest at Coding Club under our annual techno-cultural fest
+                            ZEITGEIST.
+                            This
+                            contest challenged participants to decipher the logic behind multiple inputs and their
+                            corresponding outputs, without
+                            any problem statement. It was an exhilarating opportunity for coding enthusiasts to showcase
+                            their analytical thinking
+                            and problem-solving skills.
+
+                            Participants delved into the intricacies of the provided input and output formats, employing
+                            their coding prowess and
+                            deductive reasoning to uncover the hidden logic. The contest fostered an environment of
+                            learning, collaboration, and
+                            healthy competition.
+                        </p>
+                        <a href="https://codeforces.com/contestInvitation/7e6c4114294232d26c3b268202c66324fa66f28c"
+                            class="btn btn-outline-dark wc">Contest Link</a>
+                        <p class="card-text"><small class="text-muted">Date : 26/03/2023</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="fot">
+        Copyright © 2023 Created with ❤ by Devansh Garg and Mehul Gupta
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
